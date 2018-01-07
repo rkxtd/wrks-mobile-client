@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Tahoma, Arial;
+            font-size: 16px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .content {
+            margin: auto;
+            width: 300px;
+            padding: 10px;
+        }
+        .locker {
+            width: 282px;
+            display: block;
+        }
+        .unlocked {
+            margin: auto;
+            height: 256px;
+            left: 0px;
+            width: 282px;
+            background: url(icons512.png) -230px 0;
+        }
+        .locked {
+            margin: auto;
+            height: 256px;
+            left: 0px;
+            width: 186px;
+            background: url('icons512.png') 0 0;
+        }
+        .unknown {
+            margin: auto;
+            height: 256px;
+            left: 0px;
+            width: 256px;
+            background: url('unknown.png') 0 0;
+        }
+        .loader {
+            margin: auto;
+            height: 256px;
+            left: 0px;
+            width: 256px;
+            background: url('loader.gif') 0 0;
+        }
+    </style>
+    <title>Home Super Secure: Security System</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+<div class="content">
+    <h2 class="mdc-typography--display2">System State</h2>
+    <a href="#toogle" class="lockers"><div id="state" class="loader"></div></a>
+    <p class="message"></p>
+</div>
+
+<script>
+    var HAS = new HomeAlarmSystem();
+    HAS.init();
+    $(".lockers").click(HAS.dispatch.bind(HAS));
+</script>
+</body>
+</html>
